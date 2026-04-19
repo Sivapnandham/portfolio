@@ -7,47 +7,43 @@
 
 <style>
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', sans-serif;
     margin: 0;
-    background-color: #f4f6f8;
-    color: #333;
+    background: #f5f7fb;
+    color: #1f2937;
 }
 
 header {
-    background-color: #1f2937;
+    background: linear-gradient(135deg, #1f2937, #111827);
     color: white;
     text-align: center;
-    padding: 25px;
-}
-
-.contact-top {
-    margin-top: 10px;
-    font-size: 14px;
+    padding: 40px 20px;
 }
 
 .contact-top a {
     color: #93c5fd;
     margin: 0 10px;
     text-decoration: none;
+    font-size: 14px;
 }
 
 .container {
-    width: 80%;
+    max-width: 1000px;
     margin: auto;
     padding: 20px;
 }
 
 .section {
     background: white;
-    padding: 20px;
+    padding: 25px;
     margin-top: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    transition: 0.3s;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    transition: 0.3s ease;
 }
 
 .section:hover {
-    transform: translateY(-5px);
+    transform: translateY(-6px);
 }
 
 .profile {
@@ -69,44 +65,66 @@ header {
     object-fit: cover;
 }
 
-h2 {
-    color: #1f2937;
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
 }
 
-.resume-btn {
-    padding: 10px 20px;
-    background-color: #2563eb;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
+.card {
+    background: #f9fafb;
+    padding: 15px;
+    border-radius: 10px;
+    transition: 0.3s;
 }
 
-.resume-btn:hover {
-    background-color: #1d4ed8;
+.card:hover {
+    background: #eef2ff;
+    transform: scale(1.03);
 }
 
 .metrics {
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     text-align: center;
+    gap: 10px;
 }
 
-.metrics div h3 {
-    margin: 0;
+.metrics div {
+    background: #eef2ff;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.metrics h3 {
     color: #2563eb;
+    margin: 0;
 }
 
 .accordion {
     cursor: pointer;
     padding: 12px;
     background: #e5e7eb;
-    border-radius: 5px;
+    border-radius: 6px;
     margin-top: 10px;
 }
 
 .panel {
     display: none;
     padding: 10px;
+}
+
+.resume-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #2563eb;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.resume-btn:hover {
+    background: #1d4ed8;
 }
 </style>
 </head>
@@ -115,7 +133,7 @@ h2 {
 
 <header>
     <h1>Sivanandham Palanisamy</h1>
-    <p>Product Manager | UEM | AI Automation</p>
+    <p>Product | UEM | AI Automation | Data-Driven Strategy</p>
 
     <div class="contact-top">
         <a href="mailto:sivapnandham@gmail.com">✉️ sivapnandham@gmail.com</a> |
@@ -129,62 +147,54 @@ h2 {
 <!-- Profile -->
 <div class="section profile">
     <div class="profile-pic">
-        <img src="profile.jpeg" alt="Profile Picture">
+        <img src="profile.jpeg">
     </div>
-    <h2>Product Manager</h2>
+    <h2>Product Professional</h2>
     <p>2.6+ years in Enterprise SaaS & UEM</p>
 </div>
 
 <!-- About -->
 <div class="section">
-    <h2>About Me</h2>
-
+    <h2>About</h2>
     <p>
-        Product professional with 2.6+ years of experience in Unified Endpoint Management (UEM) and enterprise SaaS platforms. 
-        Experience spans across roles including <strong>Product Manager, Product Owner, Product Analyst, and Product Associate</strong>, 
-        with a strong focus on delivering scalable, user-centric solutions.
+        Product professional with experience in building and scaling enterprise SaaS products in Unified Endpoint Management (UEM). 
+        Strong focus on delivering end-to-end product lifecycle from problem discovery to feature delivery.
     </p>
 
     <p>
-        Led end-to-end product lifecycle from problem discovery to feature delivery, collaborating with engineering, design, 
-        and business teams. Strong expertise in defining product requirements (PRDs), managing backlogs, and executing Agile workflows.
+        Drives product outcomes using data analysis, user insights, and structured prioritization. 
+        Collaborates with cross-functional teams to deliver scalable, user-centric solutions.
     </p>
 
     <p>
-        Built data-driven features using product analytics, user behavior insights, and KPI tracking. Delivered measurable impact 
-        across performance, adoption, and revenue through continuous iteration and experimentation.
-    </p>
-
-    <p>
-        Experience includes building automation platforms and AI-driven products, including workflow orchestration systems and 
-        AI-powered assistants for enterprise use cases.
+        Experience includes automation platforms and AI-driven products that simplify complex workflows 
+        and improve operational efficiency.
     </p>
 </div>
 
-<!-- What I Do -->
+<!-- Capabilities -->
 <div class="section">
-    <h2>What I Do</h2>
-
-    <ul>
-        <li><strong>Product Manager:</strong> Define product vision, roadmap, and strategy aligned with business goals</li>
-        <li><strong>Product Owner:</strong> Manage backlog, prioritize features, and drive Agile execution</li>
-        <li><strong>Product Analyst:</strong> Analyze user behavior, track KPIs, and drive data-backed decisions</li>
-        <li><strong>Product Associate:</strong> Support feature development and cross-functional collaboration</li>
-    </ul>
-
-    <p>
-        Focus on bridging business, technology, and user experience to deliver high-impact products.
-    </p>
+    <h2>Core Capabilities</h2>
+    <div class="grid">
+        <div class="card">🚀 Product Strategy & Roadmap Planning</div>
+        <div class="card">📋 PRD, User Stories & Backlog Management</div>
+        <div class="card">⚙️ Agile Execution & Sprint Planning</div>
+        <div class="card">📊 Product Analytics & KPI Tracking</div>
+        <div class="card">🔍 User Research & Problem Discovery</div>
+        <div class="card">🤝 Stakeholder & Cross-Team Collaboration</div>
+        <div class="card">📈 Feature Adoption & Growth Optimization</div>
+        <div class="card">🤖 AI & Automation Product Development</div>
+    </div>
 </div>
 
 <!-- Metrics -->
 <div class="section">
-    <h2>Key Impact</h2>
+    <h2>Impact</h2>
     <div class="metrics">
         <div><h3>60%</h3><p>Performance</p></div>
         <div><h3>40%</h3><p>Adoption</p></div>
-        <div><h3>50%</h3><p>Faster Resolution</p></div>
-        <div><h3>13%</h3><p>Revenue Growth</p></div>
+        <div><h3>50%</h3><p>Resolution</p></div>
+        <div><h3>13%</h3><p>Revenue</p></div>
     </div>
 </div>
 
@@ -192,18 +202,18 @@ h2 {
 <div class="section">
     <h2>Case Studies</h2>
 
-    <div class="accordion">Advanced Orchestration Platform</div>
+    <div class="accordion">🚀 Advanced Orchestration Platform</div>
     <div class="panel">
         <p><b>Problem:</b> Limited automation flexibility</p>
-        <p><b>Solution:</b> Built workflow engine</p>
-        <p><b>Impact:</b> Improved efficiency</p>
+        <p><b>Solution:</b> Built scalable workflow engine</p>
+        <p><b>Impact:</b> Improved efficiency and adoption</p>
     </div>
 
-    <div class="accordion">AI-Powered Automation</div>
+    <div class="accordion">🤖 AI-Powered Automation</div>
     <div class="panel">
-        <p><b>Problem:</b> Complex workflows</p>
-        <p><b>Solution:</b> AI automation</p>
-        <p><b>Impact:</b> Simplified usage</p>
+        <p><b>Problem:</b> Complex workflow setup</p>
+        <p><b>Solution:</b> AI-based workflow creation</p>
+        <p><b>Impact:</b> Simplified automation for users</p>
     </div>
 
 </div>
@@ -218,12 +228,11 @@ h2 {
 
 <script>
 var acc = document.getElementsByClassName("accordion");
-
 for (let i = 0; i < acc.length; i++) {
     acc[i].onclick = function() {
-        var panel = this.nextElementSibling;
+        let panel = this.nextElementSibling;
         panel.style.display = panel.style.display === "block" ? "none" : "block";
-    };
+    }
 }
 </script>
 
