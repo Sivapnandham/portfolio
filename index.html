@@ -13,7 +13,6 @@ body {
     color: #1f2937;
 }
 
-/* Header */
 header {
     background: linear-gradient(135deg, #1f2937, #111827);
     color: white;
@@ -21,16 +20,17 @@ header {
     padding: 40px 20px;
 }
 
-/* Contact Icons */
-.contact-top {
-    margin-top: 10px;
-}
-
+/* Contact Links (Improved Contrast) */
 .contact-top a {
-    color: #93c5fd;
+    color: #ffffff;
+    font-weight: 500;
     margin: 0 10px;
     text-decoration: none;
-    font-size: 14px;
+}
+
+.contact-top a:hover {
+    text-decoration: underline;
+    color: #60a5fa;
 }
 
 /* Layout */
@@ -40,7 +40,7 @@ header {
     padding: 20px;
 }
 
-/* Cards */
+/* Sections */
 .section {
     background: white;
     padding: 25px;
@@ -115,11 +115,6 @@ header {
     margin-top: 10px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-}
-
-.accordion span {
-    font-size: 14px;
 }
 
 .panel {
@@ -146,9 +141,9 @@ header {
     <p>Product | UEM | AI Automation | Data-Driven Strategy</p>
 
     <div class="contact-top">
-        <a href="mailto:sivapnandham@gmail.com">✉ Email</a> |
-        <a href="tel:+918825945530">📞 Mobile</a> |
-        <a href="https://linkedin.com/in/sivasnp" target="_blank">🔗 LinkedIn</a>
+        <a href="mailto:sivapnandham@gmail.com">✉ sivapnandham@gmail.com</a> |
+        <a href="tel:+918825945530">📞 +91 8825945530</a> |
+        <a href="https://linkedin.com/in/sivasnp" target="_blank">🔗 linkedin.com/in/sivasnp</a>
     </div>
 </header>
 
@@ -166,45 +161,34 @@ header {
 <!-- About -->
 <div class="section">
     <h2>About</h2>
-
     <p>
-        Product professional with hands-on experience building and scaling enterprise SaaS products in Unified Endpoint Management (UEM).
-        Focused on delivering end-to-end product lifecycle from problem discovery to feature delivery, aligning user needs with business outcomes.
+        Product professional with experience in building enterprise SaaS products in Unified Endpoint Management (UEM).
+        Drives product lifecycle from discovery to delivery using structured problem-solving and data-driven decisions.
     </p>
 
     <p>
-        Strong expertise in product analytics, including KPI tracking, churn analysis, retention optimization, and funnel metrics.
-        Uses data-driven insights to identify opportunities, reduce friction, and improve feature adoption.
+        Strong expertise in product analytics including churn analysis, retention optimization, and funnel tracking.
+        Focused on improving product adoption and user experience through measurable insights.
     </p>
 
     <p>
-        Experienced in designing automation platforms and AI-driven products that simplify complex workflows.
-        Works closely with engineering, design, and stakeholders to translate product strategy into scalable solutions.
+        Built automation platforms and AI-driven products that simplify complex enterprise workflows and improve operational efficiency.
     </p>
-
 </div>
 
 <!-- Capabilities -->
 <div class="section">
     <h2>Core Capabilities</h2>
     <div class="grid">
-
         <div class="card">🚀 Product Strategy & Roadmap</div>
         <div class="card">📋 PRD & Backlog Management</div>
-        <div class="card">⚙️ Agile & Sprint Execution</div>
-
-        <div class="card">📊 Product Analytics & KPI Tracking</div>
-        <div class="card">📉 Churn & Retention Analysis</div>
-        <div class="card">📈 Funnel & Growth Metrics</div>
-
-        <div class="card">🧪 A/B Testing & Experiments</div>
-        <div class="card">📊 Dashboarding (Power BI)</div>
-        <div class="card">🧮 Data Analysis</div>
-
-        <div class="card">🔍 User Research</div>
-        <div class="card">🤝 Stakeholder Collaboration</div>
-        <div class="card">🤖 AI & Automation Products</div>
-
+        <div class="card">⚙️ Agile Execution</div>
+        <div class="card">📊 Product Analytics</div>
+        <div class="card">📉 Churn & Retention</div>
+        <div class="card">📈 Funnel Metrics</div>
+        <div class="card">🧪 A/B Testing</div>
+        <div class="card">📊 Dashboarding</div>
+        <div class="card">🤖 AI Products</div>
     </div>
 </div>
 
@@ -223,20 +207,35 @@ header {
 <div class="section">
     <h2>Case Studies</h2>
 
-    <div class="accordion">Advanced Orchestration Platform <span>▼</span></div>
+    <div class="accordion">Advanced Orchestration <span>▼</span></div>
     <div class="panel">
         <p><b>Problem:</b> Limited automation flexibility</p>
         <p><b>Insight:</b> Low adoption due to rigid workflows</p>
-        <p><b>Solution:</b> Built custom workflow engine</p>
+        <p><b>Solution:</b> Built scalable workflow engine</p>
         <p><b>Outcome:</b> Improved efficiency and adoption</p>
     </div>
 
-    <div class="accordion">AI-Powered Automation <span>▼</span></div>
+    <div class="accordion">AI Automation <span>▼</span></div>
     <div class="panel">
-        <p><b>Problem:</b> Complex workflow setup</p>
-        <p><b>Insight:</b> High drop-off during setup</p>
-        <p><b>Solution:</b> AI-based workflow creation</p>
-        <p><b>Outcome:</b> Simplified user experience</p>
+        <p><b>Problem:</b> Complex setup</p>
+        <p><b>Insight:</b> High drop-off rate</p>
+        <p><b>Solution:</b> AI workflow generation</p>
+        <p><b>Outcome:</b> Improved usability</p>
+    </div>
+
+    <div class="accordion">UEM Dashboard <span>▼</span></div>
+    <div class="panel">
+        <p><b>Problem:</b> Lack of visibility</p>
+        <p><b>Solution:</b> KPI dashboards</p>
+        <p><b>Outcome:</b> Data-driven decisions</p>
+    </div>
+
+    <div class="accordion">Feature Adoption Optimization <span>▼</span></div>
+    <div class="panel">
+        <p><b>Problem:</b> Low feature engagement</p>
+        <p><b>Insight:</b> UX friction points</p>
+        <p><b>Solution:</b> UI improvements + analytics</p>
+        <p><b>Outcome:</b> Increased adoption</p>
     </div>
 
 </div>
@@ -251,7 +250,6 @@ header {
 
 <script>
 var acc = document.getElementsByClassName("accordion");
-
 for (let i = 0; i < acc.length; i++) {
     acc[i].onclick = function() {
         let panel = this.nextElementSibling;
