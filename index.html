@@ -1,181 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sivanandham Palanisamy - Product Manager Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sivanandham Palanisamy - Product Portfolio</title>
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background-color: #f4f6f8;
-            color: #333;
-        }
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f6f8;
+    color: #333;
+}
 
-        header {
-            background-color: #1f2937;
-            color: white;
-            text-align: center;
-            padding: 25px;
-        }
+header {
+    background-color: #1f2937;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
 
-        .container {
-            width: 80%;
-            margin: auto;
-            padding: 20px;
-        }
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
 
-        .profile {
-            text-align: center;
-            margin-top: 20px;
-        }
+.section {
+    background: white;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
 
-        .profile img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid #1f2937;
-        }
+.section:hover {
+    transform: translateY(-5px);
+}
 
-        .section {
-            background: white;
-            padding: 20px;
-            margin-top: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
+.profile {
+    text-align: center;
+}
 
-        h2 {
-            color: #1f2937;
-        }
+.profile img {
+    width: 140px;
+    border-radius: 50%;
+    border: 4px solid #1f2937;
+}
 
-        .resume-btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #2563eb;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 10px;
-        }
+h2 {
+    color: #1f2937;
+}
 
-        .resume-btn:hover {
-            background-color: #1d4ed8;
-        }
+.resume-btn {
+    padding: 10px 20px;
+    background-color: #2563eb;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
 
-        ul {
-            padding-left: 20px;
-        }
+.resume-btn:hover {
+    background-color: #1d4ed8;
+}
 
-        a {
-            color: #2563eb;
-            text-decoration: none;
-        }
-    </style>
+/* Metrics */
+.metrics {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.metrics div h3 {
+    margin: 0;
+    color: #2563eb;
+}
+
+/* Accordion */
+.accordion {
+    cursor: pointer;
+    padding: 12px;
+    background: #e5e7eb;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.panel {
+    display: none;
+    padding: 10px;
+}
+</style>
 </head>
 
 <body>
 
 <header>
     <h1>Sivanandham Palanisamy</h1>
-    <p>Product Manager | UEM | AI Automation | Data-Driven Strategy</p>
+    <p>Product Manager | UEM | AI Automation</p>
+    <p>📱 Mobile: +91 8825945530</p>
 </header>
 
 <div class="container">
 
-    <!-- Profile -->
-    <div class="profile">
-        <img src="profile.jpeg" alt="Profile Picture">
-        <h2>Sivanandham Palanisamy</h2>
-        <p>Product Manager</p>
-        <p>2.6+ years experience in Enterprise SaaS & UEM</p>
+<!-- Profile -->
+<div class="section profile">
+    <img src="profile.jpeg">
+    <h2>Product Manager</h2>
+    <p>2.6+ years in Enterprise SaaS & UEM</p>
+</div>
+
+<!-- About -->
+<div class="section">
+    <h2>About Me</h2>
+    <p>
+        Product Manager specializing in Unified Endpoint Management (UEM).
+        Builds scalable SaaS products using data-driven strategy and user insights.
+    </p>
+</div>
+
+<!-- Metrics -->
+<div class="section">
+    <h2>Key Impact</h2>
+    <div class="metrics">
+        <div><h3>60%</h3><p>Performance</p></div>
+        <div><h3>40%</h3><p>Adoption</p></div>
+        <div><h3>50%</h3><p>Faster Resolution</p></div>
+        <div><h3>13%</h3><p>Revenue Growth</p></div>
+    </div>
+</div>
+
+<!-- Product Thinking -->
+<div class="section">
+    <h2>Product Thinking</h2>
+    <ul>
+        <li>Define problems using user pain points</li>
+        <li>Prioritize using RICE framework</li>
+        <li>Measure success using KPIs</li>
+        <li>Iterate based on feedback</li>
+    </ul>
+</div>
+
+<!-- Projects -->
+<div class="section">
+    <h2>Case Studies</h2>
+
+    <div class="accordion">Advanced Orchestration Platform</div>
+    <div class="panel">
+        <p><b>Problem:</b> Limited automation flexibility</p>
+        <p><b>Solution:</b> Built workflow engine</p>
+        <p><b>Impact:</b> Improved efficiency</p>
     </div>
 
-    <!-- About -->
-    <div class="section">
-        <h2>About Me</h2>
-        <p>
-            Product Manager with 2.6+ years of experience in Unified Endpoint Management (UEM) and enterprise SaaS platforms.
-            Focused on building scalable, data-driven products that improve user experience, operational efficiency, and business outcomes.
-        </p>
-
-        <p>
-            Expertise in product lifecycle management, roadmap execution, and cross-functional collaboration across engineering, design, and business teams.
-            Delivered automation platforms and AI-driven features that simplify complex enterprise workflows.
-        </p>
-
-        <p>
-            Passionate about solving real-world problems using product thinking, user insights, and experimentation.
-        </p>
-    </div>
-
-    <!-- Skills -->
-    <div class="section">
-        <h2>Key Skills</h2>
-        <p><strong>Product:</strong> Product Strategy, Roadmap, PRD, Backlog Management, Agile/Scrum</p>
-        <p><strong>Analytics:</strong> KPI Tracking, A/B Testing, User Behavior Analysis, Power BI</p>
-        <p><strong>Domain:</strong> UEM, MDM, SaaS, Security, Automation, AI-driven Products</p>
-    </div>
-
-    <!-- Projects -->
-    <div class="section">
-        <h2>Projects</h2>
-
-        <h3>Advanced Orchestration Platform</h3>
-        <p>
-            Built a scalable automation engine enabling custom workflows using
-            Triggers → Actions → Target Groups → Review. Replaced static workflows with flexible automation.
-        </p>
-
-        <h3>AI-Powered Automation</h3>
-        <p>
-            Developed AI-driven workflow creation using natural language inputs.
-            Simplified complex configurations and improved accessibility for non-technical users.
-        </p>
-
-        <h3>Hexnode Genie AI</h3>
-        <p>
-            Defined requirements for an AI assistant providing real-time device, compliance, and security insights.
-            Improved decision-making speed and user productivity.
-        </p>
-
-        <h3>UEM Analytics Dashboard</h3>
-        <p>
-            Built dashboards for device health, patch compliance, and vulnerability tracking.
-            Enabled data-driven decisions across teams.
-        </p>
-    </div>
-
-    <!-- Impact -->
-    <div class="section">
-        <h2>Impact</h2>
-        <ul>
-            <li>Improved Windows update performance by 60%</li>
-            <li>Enhanced macOS efficiency by 45%</li>
-            <li>Boosted feature adoption by 40%</li>
-            <li>Reduced issue resolution time by 50%</li>
-            <li>Contributed to 13% revenue growth through automation features</li>
-        </ul>
-    </div>
-
-    <!-- Resume -->
-    <div class="section">
-        <h2>Resume</h2>
-        <p>Download the latest Product Manager resume:</p>
-        <a href="Resume.pdf" class="resume-btn" download>Download Resume</a>
-    </div>
-
-    <!-- Contact -->
-    <div class="section">
-        <h2>Contact</h2>
-        <p>Email: sivapnandham@gmail.com</p>
-        <p>Mobile: +91 8825945530</p>
-        <p>LinkedIn: <a href="https://linkedin.com/in/sivasnp" target="_blank">linkedin.com/in/sivasnp</a></p>
+    <div class="accordion">AI-Powered Automation</div>
+    <div class="panel">
+        <p><b>Problem:</b> Complex workflows</p>
+        <p><b>Solution:</b> AI automation</p>
+        <p><b>Impact:</b> Simplified usage</p>
     </div>
 
 </div>
+
+<!-- Resume -->
+<div class="section">
+    <h2>Resume</h2>
+    <a href="Resume.pdf" class="resume-btn">Download Resume</a>
+</div>
+
+<!-- Contact -->
+<div class="section">
+    <h2>Contact</h2>
+    <p>Email: sivapnandham@gmail.com</p>
+    <p>📱 Mobile: +91 8825945530</p>
+    <p><a href="https://linkedin.com/in/sivasnp">LinkedIn</a></p>
+</div>
+
+</div>
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+
+for (let i = 0; i < acc.length; i++) {
+    acc[i].onclick = function() {
+        var panel = this.nextElementSibling;
+        panel.style.display = panel.style.display === "block" ? "none" : "block";
+    };
+}
+</script>
 
 </body>
 </html>
