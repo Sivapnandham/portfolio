@@ -33,15 +33,22 @@ header {
     padding: 20px;
 }
 
+/* SECTION FLOAT EFFECT */
 .section {
     background: white;
     padding: 25px;
     margin-top: 20px;
     border-radius: 12px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* PROFILE SECTION */
+.section:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+/* PROFILE */
 .profile {
     text-align: center;
 }
@@ -57,7 +64,7 @@ header {
 }
 
 .profile-pic:hover {
-    transform: scale(1.05);
+    transform: scale(1.08);
 }
 
 .profile-pic img {
@@ -66,6 +73,7 @@ header {
     object-fit: cover;
 }
 
+/* GRID */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -76,8 +84,14 @@ header {
     background: #f9fafb;
     padding: 15px;
     border-radius: 10px;
+    transition: transform 0.2s ease;
 }
 
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* METRICS */
 .metrics {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -88,8 +102,14 @@ header {
     background: #eef2ff;
     padding: 15px;
     border-radius: 10px;
+    transition: transform 0.2s ease;
 }
 
+.metrics div:hover {
+    transform: scale(1.05);
+}
+
+/* ACCORDION */
 .accordion {
     cursor: pointer;
     padding: 12px;
@@ -105,12 +125,18 @@ header {
     padding: 10px;
 }
 
+/* BUTTON */
 .resume-btn {
     padding: 10px 20px;
     background: #2563eb;
     color: white;
     text-decoration: none;
     border-radius: 6px;
+    transition: transform 0.2s ease;
+}
+
+.resume-btn:hover {
+    transform: scale(1.05);
 }
 </style>
 </head>
@@ -133,44 +159,36 @@ header {
 <!-- PROFILE -->
 <div class="section profile">
     <div class="profile-pic">
-        <img src="profile.jpg" alt="Profile Picture">
+        <img src="profile.jpeg" alt="Profile Picture">
     </div>
     <h2>Sivanandham Palanisamy</h2>
     <p>Product | UEM | AI Automation</p>
 </div>
 
-<!-- About -->
+<!-- ABOUT -->
 <div class="section">
 <h2>About</h2>
 <p>
-Product professional specializing in enterprise SaaS and UEM platforms. Drives product lifecycle from discovery to delivery using structured problem-solving and data-driven insights.
-</p>
-<p>
-Strong focus on product analytics including churn reduction, retention improvement, and funnel optimization. Builds scalable automation and AI-driven solutions.
+Product professional specializing in enterprise SaaS and UEM platforms. Drives product lifecycle using data-driven insights.
 </p>
 </div>
 
-<!-- Capabilities -->
+<!-- CAPABILITIES -->
 <div class="section">
 <h2>Core Capabilities</h2>
 
 <div class="grid">
-<div class="card">🚀 Product Strategy & Roadmap</div>
-<div class="card">📋 PRD, Backlog & Agile</div>
-<div class="card">📊 Product Analytics & KPI Tracking</div>
-<div class="card">📉 Churn Rate Analysis & Retention</div>
-<div class="card">📈 Funnel Analysis & Conversion Optimization</div>
-<div class="card">🧪 A/B Testing & Experiment Design</div>
-<div class="card">📊 Dashboarding (Power BI, Excel)</div>
-<div class="card">🧮 Data Analysis & Insights</div>
-<div class="card">🔍 User Behavior Analysis</div>
-<div class="card">📡 Product Metrics & Reporting</div>
-<div class="card">🤝 Stakeholder Collaboration</div>
-<div class="card">🤖 AI & Automation Products</div>
-</div>
+<div class="card">🚀 Product Strategy</div>
+<div class="card">📊 Analytics & KPI</div>
+<div class="card">📈 Funnel Optimization</div>
+<div class="card">🧪 A/B Testing</div>
+<div class="card">🤖 AI Automation</div>
+<div class="card">🤝 Stakeholder Management</div>
 </div>
 
-<!-- Metrics -->
+</div>
+
+<!-- METRICS -->
 <div class="section">
 <h2>Impact</h2>
 <div class="metrics">
@@ -181,27 +199,23 @@ Strong focus on product analytics including churn reduction, retention improveme
 </div>
 </div>
 
-<!-- Case Studies -->
+<!-- CASE STUDIES -->
 <div class="section">
 <h2>Case Studies</h2>
 
-<div class="accordion">Advanced Orchestration Platform ▼</div>
+<div class="accordion">AI Automation ▼</div>
 <div class="panel">
-<p><b>Problem:</b> Users relied on static workflows leading to inefficiencies.</p>
-<p><b>Approach:</b> Designed modular automation workflows.</p>
-<p><b>Impact:</b> Improved adoption and reduced manual effort.</p>
+<p>Improved workflow creation using AI.</p>
 </div>
 
-<div class="accordion">AI-Powered Automation ▼</div>
+<div class="accordion">Analytics Dashboard ▼</div>
 <div class="panel">
-<p><b>Problem:</b> Complex workflow setup.</p>
-<p><b>Approach:</b> Built AI-driven workflow creation.</p>
-<p><b>Impact:</b> Increased usability and adoption.</p>
+<p>Built dashboards for data-driven decisions.</p>
 </div>
 
 </div>
 
-<!-- Resume -->
+<!-- RESUME -->
 <div class="section">
 <h2>Resume</h2>
 <a href="Resume.pdf" class="resume-btn">Download Resume</a>
