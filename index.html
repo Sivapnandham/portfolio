@@ -65,9 +65,10 @@ header {
     object-fit: cover;
 }
 
+/* Grid */
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 15px;
 }
 
@@ -75,14 +76,9 @@ header {
     background: #f9fafb;
     padding: 15px;
     border-radius: 10px;
-    transition: 0.3s;
 }
 
-.card:hover {
-    background: #eef2ff;
-    transform: scale(1.03);
-}
-
+/* Metrics */
 .metrics {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -101,6 +97,7 @@ header {
     margin: 0;
 }
 
+/* Accordion */
 .accordion {
     cursor: pointer;
     padding: 12px;
@@ -121,10 +118,6 @@ header {
     color: white;
     border-radius: 6px;
     text-decoration: none;
-}
-
-.resume-btn:hover {
-    background: #1d4ed8;
 }
 </style>
 </head>
@@ -157,18 +150,13 @@ header {
 <div class="section">
     <h2>About</h2>
     <p>
-        Product professional with experience in building and scaling enterprise SaaS products in Unified Endpoint Management (UEM). 
-        Strong focus on delivering end-to-end product lifecycle from problem discovery to feature delivery.
+        Product professional with experience in building enterprise SaaS products in Unified Endpoint Management (UEM).
+        Drives product lifecycle from discovery to delivery using structured problem-solving and data-driven decisions.
     </p>
 
     <p>
-        Drives product outcomes using data analysis, user insights, and structured prioritization. 
-        Collaborates with cross-functional teams to deliver scalable, user-centric solutions.
-    </p>
-
-    <p>
-        Experience includes automation platforms and AI-driven products that simplify complex workflows 
-        and improve operational efficiency.
+        Strong focus on user behavior analysis, churn reduction, retention improvement, and feature adoption.
+        Experience in building scalable automation and AI-driven products.
     </p>
 </div>
 
@@ -176,14 +164,23 @@ header {
 <div class="section">
     <h2>Core Capabilities</h2>
     <div class="grid">
+
         <div class="card">🚀 Product Strategy & Roadmap Planning</div>
-        <div class="card">📋 PRD, User Stories & Backlog Management</div>
-        <div class="card">⚙️ Agile Execution & Sprint Planning</div>
-        <div class="card">📊 Product Analytics & KPI Tracking</div>
+        <div class="card">📋 PRD, User Stories, Backlog Management</div>
+        <div class="card">⚙️ Agile/Scrum Execution & Sprint Planning</div>
+
+        <div class="card">📊 KPI Tracking, Product Analytics</div>
+        <div class="card">📉 Churn Analysis & Retention Optimization</div>
+        <div class="card">📈 Funnel Analysis & Growth Metrics</div>
+
+        <div class="card">🧪 A/B Testing & Experimentation</div>
+        <div class="card">📊 Dashboarding (Power BI, Excel)</div>
+        <div class="card">🧮 Data Analysis & Insights</div>
+
         <div class="card">🔍 User Research & Problem Discovery</div>
-        <div class="card">🤝 Stakeholder & Cross-Team Collaboration</div>
-        <div class="card">📈 Feature Adoption & Growth Optimization</div>
+        <div class="card">🤝 Stakeholder Collaboration</div>
         <div class="card">🤖 AI & Automation Product Development</div>
+
     </div>
 </div>
 
@@ -198,22 +195,39 @@ header {
     </div>
 </div>
 
-<!-- Projects -->
+<!-- Case Studies -->
 <div class="section">
     <h2>Case Studies</h2>
 
     <div class="accordion">🚀 Advanced Orchestration Platform</div>
     <div class="panel">
-        <p><b>Problem:</b> Limited automation flexibility</p>
-        <p><b>Solution:</b> Built scalable workflow engine</p>
-        <p><b>Impact:</b> Improved efficiency and adoption</p>
+        <p><b>Problem:</b> Enterprise users relied on rigid predefined workflows, limiting flexibility and increasing manual effort.</p>
+
+        <p><b>Insight:</b> User behavior analysis showed low automation adoption and high manual configuration effort.</p>
+
+        <p><b>Solution:</b> Designed a scalable automation engine enabling custom workflows using Triggers → Actions → Target Groups.</p>
+
+        <p><b>Outcome:</b> Improved workflow efficiency, reduced manual effort, and increased automation adoption.</p>
     </div>
 
     <div class="accordion">🤖 AI-Powered Automation</div>
     <div class="panel">
-        <p><b>Problem:</b> Complex workflow setup</p>
-        <p><b>Solution:</b> AI-based workflow creation</p>
-        <p><b>Impact:</b> Simplified automation for users</p>
+        <p><b>Problem:</b> Workflow creation required technical expertise, limiting usability for non-technical users.</p>
+
+        <p><b>Insight:</b> High drop-off rate during workflow setup indicated complexity and usability issues.</p>
+
+        <p><b>Solution:</b> Built AI-driven workflow creation using natural language inputs to auto-generate automation rules.</p>
+
+        <p><b>Outcome:</b> Reduced friction, improved user experience, and increased feature adoption.</p>
+    </div>
+
+    <div class="accordion">📊 UEM Analytics Dashboard</div>
+    <div class="panel">
+        <p><b>Problem:</b> Lack of visibility into device health, compliance, and vulnerabilities.</p>
+
+        <p><b>Solution:</b> Built dashboards tracking KPIs including patch compliance, failure rates, and device status.</p>
+
+        <p><b>Outcome:</b> Enabled data-driven decisions and improved remediation planning.</p>
     </div>
 
 </div>
