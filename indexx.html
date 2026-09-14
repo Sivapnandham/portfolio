@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sivanandham P | Product Analyst</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-color: #fcfcfc;
+            --text-main: #111111;
+            --text-muted: #666666;
+            --border-color: #eaeaea;
+            --tag-border: #d4d4d4;
+            --nav-bg: rgba(252, 252, 252, 0.85);
+            --transition-smooth: 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            line-height: 1.6;
+        }
+
+        ::selection {
+            background-color: var(--text-main);
+            color: var(--bg-color);
+        }
+
+        h1, h2, h3, h4, h5, p {
+            margin: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .section {
+            padding: 120px 0;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .hero-section {
+            min-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-top: 80px;
+            border-top: none;
+        }
+
+        .hero-title {
+            font-size: clamp(3rem, 8vw, 6.5rem);
+            font-weight: 500;
+            letter-spacing: -0.04em;
+            line-height: 1.1;
+            margin-bottom: 24px;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.25rem, 3vw, 2rem);
+            font-weight: 300;
+            color: var(--text-muted);
+            letter-spacing: -0.02em;
+            max-width: 700px;
+            line-height: 1.4;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: var(--nav-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 100;
+        }
+
+        .nav-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 72px;
+        }
+
+        .logo {
+            font-weight: 600;
+            font-size: 1.2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+
+        .nav-links a:hover {
+            color: var(--text-main);
+        }
+
+        .hover-underline {
+            position: relative;
+            display: inline-flex;
+            padding-bottom: 2px;
+        }
+
+        .hover-underline::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            bottom: 0;
+            left: 0;
+            background-color: currentColor;
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1);
+        }
+
+        .hover-underline:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        .grid-layout {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            gap: 48px;
+        }
+
+        .section-label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-muted);
+            margin-top: 8px;
+        }
+
+        .about-text {
+            font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+            font-weight: 300;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        .project-list {
+            display: flex;
+            flex-direction: column;
+            gap: 64px;
+        }
+
+        .project-item {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .project-title {
+            font-size: 1.75rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+        }
+
+        .project-desc {
+            font-size: 1.125rem;
+            font-weight: 300;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 8px;
+        }
+
+        .skill-tag {
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            border: 1px solid var(--tag-border);
+            border-radius: 999px;
+            padding: 6px 16px;
+            transition: all 0.2s ease;
+        }
+
+        .skill-tag:hover {
+            border-color: var(--text-main);
+            color: var(--text-main);
+        }
+
+        .contact-cta {
+            font-size: clamp(2rem, 5vw, 4rem);
+            font-weight: 500;
+            letter-spacing: -0.03em;
+            line-height: 1.2;
+            margin-bottom: 48px;
+        }
+
+        .contact-links {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .contact-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .contact-label {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+
+        .contact-link {
+            font-size: 1.5rem;
+            font-weight: 400;
+            align-self: flex-start;
+        }
+
+        /* Reveal Animation Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity var(--transition-smooth), transform var(--transition-smooth);
+            will-change: opacity, transform;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .grid-layout {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+            .section {
+                padding: 80px 0;
+            }
+            .nav-links {
+                display: none; /* Keep mobile clean, mostly scroll based */
+            }
+        }
+        
+        @media (min-width: 769px) {
+            .contact-links {
+                flex-direction: row;
+                gap: 80px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container nav-inner">
+            <a href="#" class="logo">SP.</a>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#work">Work</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        
+        <section class="hero-section reveal">
+            <h1 class="hero-title">Sivanandham P</h1>
+            <h2 class="hero-subtitle">Product Analyst</h2>
+        </section>
+
+        <section id="about" class="section reveal">
+            <div class="grid-layout">
+                <div>
+                    <h3 class="section-label">About Me</h3>
+                </div>
+                <div>
+                    <p class="about-text">
+                        I am a data-driven Product Analyst with 3 years of experience orchestrating the end-to-end product lifecycle for Enterprise SaaS, UEM, and cybersecurity platforms. By leveraging product analytics, user research, and cross-functional Agile collaboration, I translate complex technical requirements into intuitive, secure workflows. Ultimately, I bridge the gap between business strategy and engineering to build scalable, user-centric solutions that drive measurable business impact.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="work" class="section">
+            <div class="grid-layout">
+                <div class="reveal">
+                    <h3 class="section-label">Selected Work</h3>
+                </div>
+                
+                <div class="project-list">
+                    
+                    <!-- Project 1 -->
+                    <article class="project-item reveal">
+                        <h4 class="project-title">Hexnode Identity Provider (IDP) & SSO Portal</h4>
+                        <p class="project-desc">
+                            An enterprise Identity and Access Management (IAM) portal enabling secure user provisioning and adaptive access to corporate applications. It solves unauthorized data access by enforcing context-aware Zero Trust policies, dynamically restricting Single Sign-On (SSO) based on user risk scores, geolocation, and device platforms.
+                        </p>
+                        <div class="skills-container">
+                            <span class="skill-tag">Product Strategy</span>
+                            <span class="skill-tag">Pricing Strategy</span>
+                            <span class="skill-tag">Go-to-Market (GTM) Strategy</span>
+                            <span class="skill-tag">User Segmentation</span>
+                            <span class="skill-tag">PRD Creation</span>
+                            <span class="skill-tag">Zero Trust Architecture</span>
+                            <span class="skill-tag">SSO Protocols</span>
+                            <span class="skill-tag">Jira</span>
+                            <span class="skill-tag">Figma</span>
+                        </div>
+                    </article>
+
+                    <!-- Project 2 -->
+                    <article class="project-item reveal">
+                        <h4 class="project-title">Advanced Orchestration & Genie AI Platform</h4>
+                        <p class="project-desc">
+                            An AI-powered workflow automation platform designed for enterprise IT administrators. It addresses the issue of time-consuming manual endpoint management by allowing admins to execute complex device operations using natural language, ultimately reducing manual operational effort by 40%.
+                        </p>
+                        <div class="skills-container">
+                            <span class="skill-tag">Product Discovery</span>
+                            <span class="skill-tag">Tiered Pricing Strategy</span>
+                            <span class="skill-tag">User Research</span>
+                            <span class="skill-tag">A/B Testing</span>
+                            <span class="skill-tag">OKRs</span>
+                            <span class="skill-tag">Feature Prioritization</span>
+                            <span class="skill-tag">AI Integration</span>
+                            <span class="skill-tag">Mixpanel</span>
+                            <span class="skill-tag">Power BI</span>
+                            <span class="skill-tag">Agile/Scrum</span>
+                        </div>
+                    </article>
+
+                    <!-- Project 3 -->
+                    <article class="project-item reveal">
+                        <h4 class="project-title">Patch Management Optimization</h4>
+                        <p class="project-desc">
+                            A performance tuning and visibility initiative for the enterprise Patch & Updates Dashboard. It solves the critical problem of slow OS update deployments and lack of endpoint vulnerability tracking, increasing Windows patch deployment performance by 60% and providing clear KPI-driven visibility.
+                        </p>
+                        <div class="skills-container">
+                            <span class="skill-tag">Product Analytics</span>
+                            <span class="skill-tag">Funnel Analysis</span>
+                            <span class="skill-tag">Roadmap Planning</span>
+                            <span class="skill-tag">KPI Tracking</span>
+                            <span class="skill-tag">Churn Analysis</span>
+                            <span class="skill-tag">SQL</span>
+                            <span class="skill-tag">Power BI</span>
+                            <span class="skill-tag">Confluence</span>
+                        </div>
+                    </article>
+
+                    <!-- Project 4 -->
+                    <article class="project-item reveal">
+                        <h4 class="project-title">macOS Security Suite & Remote Lost Mode</h4>
+                        <p class="project-desc">
+                            An incident response workflow designed to secure missing or stolen enterprise MacBooks. It closes a critical endpoint security gap by engineering a one-click remote Lost Mode using dynamic wildcards, instantly locking the device and streamlining enterprise recovery operations.
+                        </p>
+                        <div class="skills-container">
+                            <span class="skill-tag">Competitive Analysis</span>
+                            <span class="skill-tag">Customer Journey Mapping</span>
+                            <span class="skill-tag">Cross-functional Alignment</span>
+                            <span class="skill-tag">Customer Feedback Analysis</span>
+                            <span class="skill-tag">MDM Protocols</span>
+                        </div>
+                    </article>
+
+                    <!-- Project 5 -->
+                    <article class="project-item reveal">
+                        <h4 class="project-title">Live SSH Terminal for Windows</h4>
+                        <p class="project-desc">
+                            A secure, remote command-line access tool built for enterprise IT troubleshooting. It eliminates the need for physical IT intervention by allowing admins to securely execute backend commands on remote Windows endpoints, drastically cutting the mean time to resolution (MTTR) for critical issues.
+                        </p>
+                        <div class="skills-container">
+                            <span class="skill-tag">Technical Product Management</span>
+                            <span class="skill-tag">Backlog Management</span>
+                            <span class="skill-tag">Sprint Planning</span>
+                            <span class="skill-tag">Stakeholder Management</span>
+                            <span class="skill-tag">API Documentation</span>
+                            <span class="skill-tag">Agile Execution</span>
+                            <span class="skill-tag">Jira</span>
+                        </div>
+                    </article>
+
+                    <!-- Project 6 -->
+                    <article class="project-item reveal">
+                        <h4 class="project-title">Two-Way Administrator-to-Device Chat</h4>
+                        <p class="project-desc">
+                            A real-time communication module connecting IT administrators directly with end-users on managed devices. It solves communication friction during live troubleshooting sessions, ensuring clear, documented IT support workflows without relying on external, non-compliant messaging applications.
+                        </p>
+                        <div class="skills-container">
+                            <span class="skill-tag">UX Workflow Mapping</span>
+                            <span class="skill-tag">Usability Testing</span>
+                            <span class="skill-tag">Requirement Prioritization (RICE/MoSCoW)</span>
+                            <span class="skill-tag">Wireframing</span>
+                            <span class="skill-tag">MockFlow</span>
+                            <span class="skill-tag">Requirement Analysis</span>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section reveal">
+            <div class="grid-layout">
+                <div>
+                    <h3 class="section-label">Contact</h3>
+                </div>
+                <div>
+                    <h2 class="contact-cta">Let's build something<br>impactful together.</h2>
+                    
+                    <div class="contact-links">
+                        <div class="contact-group">
+                            <span class="contact-label">Email</span>
+                            <a href="mailto:sivapnandham@gmail.com" class="contact-link hover-underline">
+                                sivapnandham@gmail.com
+                            </a>
+                        </div>
+                        <div class="contact-group">
+                            <span class="contact-label">Network</span>
+                            <a href="https://www.linkedin.com/in/sivanandhampalanisamy/" target="_blank" rel="noopener noreferrer" class="contact-link hover-underline">
+                                LinkedIn Profile
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Configuration for the Intersection Observer
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1 // Triggers when 10% of the element is visible
+            };
+
+            // Create the observer
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Add the 'visible' class to trigger CSS transition
+                        entry.target.classList.add('visible');
+                        // Stop observing once the animation is triggered
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            // Select all elements with the 'reveal' class
+            const revealElements = document.querySelectorAll('.reveal');
+            
+            // Loop through elements and either reveal them immediately (if above fold) or observe them
+            revealElements.forEach(el => {
+                // Using a slight delay to ensure the browser has painted the initial state
+                setTimeout(() => {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top < window.innerHeight && rect.bottom >= 0) {
+                        el.classList.add('visible');
+                    } else {
+                        observer.observe(el);
+                    }
+                }, 100);
+            });
+        });
+    </script>
+</body>
+</html>
