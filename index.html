@@ -7,41 +7,45 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --bg-color: #fcfcfc;
+            --bg-color: #ffffff;
             --text-main: #111111;
-            --text-muted: #666666;
-            --border-color: #eaeaea;
-            --tag-border: #d4d4d4;
-            --nav-bg: rgba(252, 252, 252, 0.85);
+            --text-muted: #5f6368; /* Google-esque muted text */
+            --tag-bg: #e8f0fe; /* Google light blue */
+            --tag-text: #1a73e8; /* Google dark blue */
+            --border-color: #dadce0;
+            --nav-bg: rgba(255, 255, 255, 0.9);
             --transition-smooth: 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            --shadow-soft: 0 20px 40px rgba(0, 0, 0, 0.08);
+            --shadow-hover: 0 30px 60px rgba(0, 0, 0, 0.12);
         }
 
         html {
             scroll-behavior: smooth;
         }
 
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
             background-color: var(--bg-color);
             color: var(--text-main);
             font-family: 'Inter', sans-serif;
-            margin: 0;
-            padding: 0;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         ::selection {
-            background-color: var(--text-main);
-            color: var(--bg-color);
-        }
-
-        h1, h2, h3, h4, h5, p {
-            margin: 0;
+            background-color: var(--tag-text);
+            color: #ffffff;
         }
 
         a {
@@ -50,40 +54,9 @@
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 1280px;
             margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        .section {
-            padding: 120px 0;
-            border-top: 1px solid var(--border-color);
-        }
-
-        .hero-section {
-            min-height: 85vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding-top: 80px;
-            border-top: none;
-        }
-
-        .hero-title {
-            font-size: clamp(3rem, 8vw, 6.5rem);
-            font-weight: 500;
-            letter-spacing: -0.04em;
-            line-height: 1.1;
-            margin-bottom: 24px;
-        }
-
-        .hero-subtitle {
-            font-size: clamp(1.25rem, 3vw, 2rem);
-            font-weight: 300;
-            color: var(--text-muted);
-            letter-spacing: -0.02em;
-            max-width: 700px;
-            line-height: 1.4;
+            padding: 0 5%;
         }
 
         nav {
@@ -92,104 +65,185 @@
             left: 0;
             width: 100%;
             background: var(--nav-bg);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border-color);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
             z-index: 100;
+            transition: all 0.3s ease;
         }
 
         .nav-inner {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 72px;
+            height: 80px;
         }
 
         .logo {
-            font-weight: 600;
-            font-size: 1.2rem;
-            letter-spacing: -0.02em;
+            font-weight: 700;
+            font-size: 1.25rem;
+            letter-spacing: -0.03em;
         }
 
         .nav-links {
             display: flex;
-            gap: 32px;
-            font-size: 0.9rem;
+            gap: 40px;
+            font-size: 0.95rem;
             font-weight: 500;
+        }
+
+        .nav-links a {
+            position: relative;
             color: var(--text-muted);
+            transition: color 0.3s ease;
         }
 
         .nav-links a:hover {
             color: var(--text-main);
         }
 
-        .hover-underline {
-            position: relative;
-            display: inline-flex;
-            padding-bottom: 2px;
-        }
-
-        .hover-underline::after {
+        .nav-links a::after {
             content: '';
             position: absolute;
             width: 100%;
-            height: 1px;
-            bottom: 0;
+            height: 2px;
+            bottom: -4px;
             left: 0;
-            background-color: currentColor;
+            background-color: var(--text-main);
             transform: scaleX(0);
-            transform-origin: bottom right;
+            transform-origin: right;
             transition: transform 0.4s cubic-bezier(0.86, 0, 0.07, 1);
         }
 
-        .hover-underline:hover::after {
+        .nav-links a:hover::after {
             transform: scaleX(1);
-            transform-origin: bottom left;
+            transform-origin: left;
         }
 
-        .grid-layout {
-            display: grid;
-            grid-template-columns: 1fr 3fr;
-            gap: 48px;
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-top: 100px;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            align-items: center;
         }
 
-        .section-label {
-            font-size: 0.85rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
+        .profile-img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow-soft);
+            border: 4px solid #fff;
+        }
+
+        .hero-title {
+            font-size: clamp(3rem, 8vw, 5.5rem);
+            font-weight: 700;
+            letter-spacing: -0.04em;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+
+        .hero-role {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: 400;
+            color: var(--tag-text);
+            margin-bottom: 2rem;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-bio {
+            font-size: clamp(1.1rem, 2vw, 1.35rem);
+            font-weight: 400;
             color: var(--text-muted);
-            margin-top: 8px;
+            line-height: 1.7;
+            max-width: 800px;
         }
 
-        .about-text {
-            font-size: clamp(1.25rem, 2.5vw, 1.75rem);
-            font-weight: 300;
-            color: var(--text-main);
-            line-height: 1.6;
+        .projects-section {
+            padding: 120px 0;
+        }
+        
+        .section-header {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            letter-spacing: -0.04em;
+            margin-bottom: 80px;
+            text-align: center;
         }
 
-        .project-list {
+        .project-row {
+            display: flex;
+            align-items: center;
+            gap: 6rem;
+            margin-bottom: 120px;
+        }
+
+        /* Alternating layout magic */
+        .project-row:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .project-content {
+            flex: 1;
             display: flex;
             flex-direction: column;
-            gap: 64px;
+            gap: 1.5rem;
         }
 
-        .project-item {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
+        .project-media-container {
+            flex: 1.2;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+            position: relative;
+            background: #f8f9fa;
+        }
+
+        .project-media-container:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        /* Enforce a nice aspect ratio for media */
+        .project-media-container::before {
+            content: "";
+            display: block;
+            padding-top: 75%; /* 4:3 Aspect Ratio */
+        }
+
+        .project-media-container img,
+        .project-media-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .project-title {
-            font-size: 1.75rem;
-            font-weight: 500;
-            letter-spacing: -0.02em;
+            font-size: clamp(1.75rem, 3vw, 2.5rem);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            line-height: 1.2;
+        }
+
+        .project-role {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-main);
         }
 
         .project-desc {
             font-size: 1.125rem;
-            font-weight: 300;
             color: var(--text-muted);
             line-height: 1.7;
         }
@@ -197,61 +251,91 @@
         .skills-container {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 8px;
+            gap: 8px;
+            margin-top: 1rem;
         }
 
         .skill-tag {
-            font-size: 0.8rem;
-            font-weight: 500;
-            color: var(--text-muted);
-            border: 1px solid var(--tag-border);
-            border-radius: 999px;
-            padding: 6px 16px;
-            transition: all 0.2s ease;
+            background-color: var(--tag-bg);
+            color: var(--tag-text);
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 50px;
+            letter-spacing: 0.01em;
+            transition: background-color 0.2s ease, color 0.2s ease;
         }
 
         .skill-tag:hover {
-            border-color: var(--text-main);
-            color: var(--text-main);
+            background-color: var(--tag-text);
+            color: #ffffff;
         }
 
-        .contact-cta {
-            font-size: clamp(2rem, 5vw, 4rem);
+        .contact-section {
+            padding: 150px 0 100px;
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+        }
+
+        .contact-heading {
+            font-size: clamp(3rem, 8vw, 7rem);
+            font-weight: 700;
+            letter-spacing: -0.05em;
+            line-height: 1;
+            margin-bottom: 2rem;
+            color: #fff;
+        }
+
+        .huge-email {
+            display: inline-block;
+            font-size: clamp(1.5rem, 5vw, 4rem);
             font-weight: 500;
-            letter-spacing: -0.03em;
-            line-height: 1.2;
-            margin-bottom: 48px;
+            color: #fff;
+            margin-bottom: 4rem;
+            position: relative;
+            letter-spacing: -0.02em;
         }
 
-        .contact-links {
+        /* Custom underline animation for massive email link */
+        .huge-email::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 4px;
+            bottom: -8px;
+            left: 0;
+            background-color: var(--tag-text); /* Highlight color */
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.6s cubic-bezier(0.86, 0, 0.07, 1);
+        }
+
+        .huge-email:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .footer-socials {
             display: flex;
-            flex-direction: column;
-            gap: 32px;
-        }
-
-        .contact-group {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .contact-label {
-            font-size: 0.9rem;
+            justify-content: center;
+            gap: 2rem;
+            font-size: 1.25rem;
             font-weight: 500;
-            color: var(--text-muted);
         }
 
-        .contact-link {
-            font-size: 1.5rem;
-            font-weight: 400;
-            align-self: flex-start;
+        .footer-socials a {
+            color: #999;
+            transition: color 0.3s ease;
         }
 
-        /* Reveal Animation Classes */
+        .footer-socials a:hover {
+            color: #fff;
+        }
+
         .reveal {
             opacity: 0;
-            transform: translateY(30px);
+            transform: translateY(60px);
             transition: opacity var(--transition-smooth), transform var(--transition-smooth);
             will-change: opacity, transform;
         }
@@ -261,24 +345,30 @@
             transform: translateY(0);
         }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .grid-layout {
-                grid-template-columns: 1fr;
-                gap: 24px;
+        /* Staggered transition delays for project items */
+        .project-content { transition-delay: 0.1s; }
+        .project-media-container { transition-delay: 0.2s; }
+
+        @media (max-width: 992px) {
+            .project-row {
+                flex-direction: column !important; /* Override alternating for mobile */
+                gap: 3rem;
+                margin-bottom: 80px;
             }
-            .section {
-                padding: 80px 0;
+            .project-media-container {
+                width: 100%;
             }
-            .nav-links {
-                display: none; /* Keep mobile clean, mostly scroll based */
+            .hero-section {
+                padding-top: 120px;
             }
         }
-        
-        @media (min-width: 769px) {
-            .contact-links {
-                flex-direction: row;
-                gap: 80px;
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .contact-section {
+                padding: 100px 0 60px;
             }
         }
     </style>
@@ -287,7 +377,7 @@
 
     <nav>
         <div class="container nav-inner">
-            <a href="#" class="logo">SP.</a>
+            <a href="#" class="logo">Sivanandham P.</a>
             <div class="nav-links">
                 <a href="#about">About</a>
                 <a href="#work">Work</a>
@@ -296,170 +386,185 @@
         </div>
     </nav>
 
-    <main class="container">
-        
-        <section class="hero-section reveal">
+    <main>
+        <section id="about" class="hero-section container reveal">
+            <!-- Circular Profile Image Placeholder -->
+            <img src="https://placehold.co/400x400/e8f0fe/1a73e8?text=SP" alt="Sivanandham P" class="profile-img">
+            
             <h1 class="hero-title">Sivanandham P</h1>
-            <h2 class="hero-subtitle">Product Analyst</h2>
+            <h2 class="hero-role">Product Analyst</h2>
+            <p class="hero-bio">
+                I am a data-driven Product Analyst with 3 years of experience orchestrating the end-to-end product lifecycle for Enterprise SaaS, UEM, and cybersecurity platforms. By leveraging product analytics, user research, and cross-functional Agile collaboration, I translate complex technical requirements into intuitive, secure workflows. Ultimately, I bridge the gap between business strategy and engineering to build scalable, user-centric solutions that drive measurable business impact.
+            </p>
         </section>
 
-        <section id="about" class="section reveal">
-            <div class="grid-layout">
-                <div>
-                    <h3 class="section-label">About Me</h3>
-                </div>
-                <div>
-                    <p class="about-text">
-                        I am a data-driven Product Analyst with 3 years of experience orchestrating the end-to-end product lifecycle for Enterprise SaaS, UEM, and cybersecurity platforms. By leveraging product analytics, user research, and cross-functional Agile collaboration, I translate complex technical requirements into intuitive, secure workflows. Ultimately, I bridge the gap between business strategy and engineering to build scalable, user-centric solutions that drive measurable business impact.
+        <section id="work" class="projects-section container">
+            <h3 class="section-header reveal">Selected Work</h3>
+
+            <!-- Project 1: Hexnode IDP (Video Placement) -->
+            <article class="project-row reveal">
+                <div class="project-content">
+                    <h4 class="project-title">Hexnode Identity Provider (IDP) & SSO Portal</h4>
+                    <p class="project-role">Role: Product Analyst</p>
+                    <p class="project-desc">
+                        An enterprise Identity and Access Management (IAM) portal enabling secure user provisioning and adaptive access to corporate applications. It solves unauthorized data access by enforcing context-aware Zero Trust policies, dynamically restricting Single Sign-On (SSO) based on user risk scores, geolocation, and device platforms.
                     </p>
-                </div>
-            </div>
-        </section>
-
-        <section id="work" class="section">
-            <div class="grid-layout">
-                <div class="reveal">
-                    <h3 class="section-label">Selected Work</h3>
-                </div>
-                
-                <div class="project-list">
-                    
-                    <!-- Project 1 -->
-                    <article class="project-item reveal">
-                        <h4 class="project-title">Hexnode Identity Provider (IDP) & SSO Portal</h4>
-                        <p class="project-desc">
-                            An enterprise Identity and Access Management (IAM) portal enabling secure user provisioning and adaptive access to corporate applications. It solves unauthorized data access by enforcing context-aware Zero Trust policies, dynamically restricting Single Sign-On (SSO) based on user risk scores, geolocation, and device platforms.
-                        </p>
-                        <div class="skills-container">
-                            <span class="skill-tag">Product Strategy</span>
-                            <span class="skill-tag">Pricing Strategy</span>
-                            <span class="skill-tag">Go-to-Market (GTM) Strategy</span>
-                            <span class="skill-tag">User Segmentation</span>
-                            <span class="skill-tag">PRD Creation</span>
-                            <span class="skill-tag">Zero Trust Architecture</span>
-                            <span class="skill-tag">SSO Protocols</span>
-                            <span class="skill-tag">Jira</span>
-                            <span class="skill-tag">Figma</span>
-                        </div>
-                    </article>
-
-                    <!-- Project 2 -->
-                    <article class="project-item reveal">
-                        <h4 class="project-title">Advanced Orchestration & Genie AI Platform</h4>
-                        <p class="project-desc">
-                            An AI-powered workflow automation platform designed for enterprise IT administrators. It addresses the issue of time-consuming manual endpoint management by allowing admins to execute complex device operations using natural language, ultimately reducing manual operational effort by 40%.
-                        </p>
-                        <div class="skills-container">
-                            <span class="skill-tag">Product Discovery</span>
-                            <span class="skill-tag">Tiered Pricing Strategy</span>
-                            <span class="skill-tag">User Research</span>
-                            <span class="skill-tag">A/B Testing</span>
-                            <span class="skill-tag">OKRs</span>
-                            <span class="skill-tag">Feature Prioritization</span>
-                            <span class="skill-tag">AI Integration</span>
-                            <span class="skill-tag">Mixpanel</span>
-                            <span class="skill-tag">Power BI</span>
-                            <span class="skill-tag">Agile/Scrum</span>
-                        </div>
-                    </article>
-
-                    <!-- Project 3 -->
-                    <article class="project-item reveal">
-                        <h4 class="project-title">Patch Management Optimization</h4>
-                        <p class="project-desc">
-                            A performance tuning and visibility initiative for the enterprise Patch & Updates Dashboard. It solves the critical problem of slow OS update deployments and lack of endpoint vulnerability tracking, increasing Windows patch deployment performance by 60% and providing clear KPI-driven visibility.
-                        </p>
-                        <div class="skills-container">
-                            <span class="skill-tag">Product Analytics</span>
-                            <span class="skill-tag">Funnel Analysis</span>
-                            <span class="skill-tag">Roadmap Planning</span>
-                            <span class="skill-tag">KPI Tracking</span>
-                            <span class="skill-tag">Churn Analysis</span>
-                            <span class="skill-tag">SQL</span>
-                            <span class="skill-tag">Power BI</span>
-                            <span class="skill-tag">Confluence</span>
-                        </div>
-                    </article>
-
-                    <!-- Project 4 -->
-                    <article class="project-item reveal">
-                        <h4 class="project-title">macOS Security Suite & Remote Lost Mode</h4>
-                        <p class="project-desc">
-                            An incident response workflow designed to secure missing or stolen enterprise MacBooks. It closes a critical endpoint security gap by engineering a one-click remote Lost Mode using dynamic wildcards, instantly locking the device and streamlining enterprise recovery operations.
-                        </p>
-                        <div class="skills-container">
-                            <span class="skill-tag">Competitive Analysis</span>
-                            <span class="skill-tag">Customer Journey Mapping</span>
-                            <span class="skill-tag">Cross-functional Alignment</span>
-                            <span class="skill-tag">Customer Feedback Analysis</span>
-                            <span class="skill-tag">MDM Protocols</span>
-                        </div>
-                    </article>
-
-                    <!-- Project 5 -->
-                    <article class="project-item reveal">
-                        <h4 class="project-title">Live SSH Terminal for Windows</h4>
-                        <p class="project-desc">
-                            A secure, remote command-line access tool built for enterprise IT troubleshooting. It eliminates the need for physical IT intervention by allowing admins to securely execute backend commands on remote Windows endpoints, drastically cutting the mean time to resolution (MTTR) for critical issues.
-                        </p>
-                        <div class="skills-container">
-                            <span class="skill-tag">Technical Product Management</span>
-                            <span class="skill-tag">Backlog Management</span>
-                            <span class="skill-tag">Sprint Planning</span>
-                            <span class="skill-tag">Stakeholder Management</span>
-                            <span class="skill-tag">API Documentation</span>
-                            <span class="skill-tag">Agile Execution</span>
-                            <span class="skill-tag">Jira</span>
-                        </div>
-                    </article>
-
-                    <!-- Project 6 -->
-                    <article class="project-item reveal">
-                        <h4 class="project-title">Two-Way Administrator-to-Device Chat</h4>
-                        <p class="project-desc">
-                            A real-time communication module connecting IT administrators directly with end-users on managed devices. It solves communication friction during live troubleshooting sessions, ensuring clear, documented IT support workflows without relying on external, non-compliant messaging applications.
-                        </p>
-                        <div class="skills-container">
-                            <span class="skill-tag">UX Workflow Mapping</span>
-                            <span class="skill-tag">Usability Testing</span>
-                            <span class="skill-tag">Requirement Prioritization (RICE/MoSCoW)</span>
-                            <span class="skill-tag">Wireframing</span>
-                            <span class="skill-tag">MockFlow</span>
-                            <span class="skill-tag">Requirement Analysis</span>
-                        </div>
-                    </article>
-
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="section reveal">
-            <div class="grid-layout">
-                <div>
-                    <h3 class="section-label">Contact</h3>
-                </div>
-                <div>
-                    <h2 class="contact-cta">Let's build something<br>impactful together.</h2>
-                    
-                    <div class="contact-links">
-                        <div class="contact-group">
-                            <span class="contact-label">Email</span>
-                            <a href="mailto:sivapnandham@gmail.com" class="contact-link hover-underline">
-                                sivapnandham@gmail.com
-                            </a>
-                        </div>
-                        <div class="contact-group">
-                            <span class="contact-label">Network</span>
-                            <a href="https://www.linkedin.com/in/sivanandhampalanisamy/" target="_blank" rel="noopener noreferrer" class="contact-link hover-underline">
-                                LinkedIn Profile
-                            </a>
-                        </div>
+                    <div class="skills-container">
+                        <span class="skill-tag">Product Strategy</span>
+                        <span class="skill-tag">Pricing Strategy</span>
+                        <span class="skill-tag">Go-to-Market (GTM)</span>
+                        <span class="skill-tag">User Segmentation</span>
+                        <span class="skill-tag">PRD Creation</span>
+                        <span class="skill-tag">Zero Trust Architecture</span>
+                        <span class="skill-tag">SSO Protocols</span>
+                        <span class="skill-tag">Jira</span>
+                        <span class="skill-tag">Figma</span>
                     </div>
                 </div>
-            </div>
-        </section>
+                <div class="project-media-container">
+                    <!-- Placeholder for Product Walkthrough Video -->
+                    <video autoplay loop muted playsinline>
+                        <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </article>
 
+            <!-- Project 2: Genie AI Platform (Image Placement) -->
+            <article class="project-row reveal">
+                <div class="project-content">
+                    <h4 class="project-title">Advanced Orchestration & Genie AI Platform</h4>
+                    <p class="project-role">Role: Product Analyst</p>
+                    <p class="project-desc">
+                        An AI-powered workflow automation platform designed for enterprise IT administrators. It addresses the issue of time-consuming manual endpoint management by allowing admins to execute complex device operations using natural language, ultimately reducing manual operational effort by 40%.
+                    </p>
+                    <div class="skills-container">
+                        <span class="skill-tag">Product Discovery</span>
+                        <span class="skill-tag">Tiered Pricing</span>
+                        <span class="skill-tag">User Research</span>
+                        <span class="skill-tag">A/B Testing</span>
+                        <span class="skill-tag">OKRs</span>
+                        <span class="skill-tag">Feature Prioritization</span>
+                        <span class="skill-tag">AI Integration</span>
+                        <span class="skill-tag">Mixpanel</span>
+                        <span class="skill-tag">Power BI</span>
+                        <span class="skill-tag">Agile/Scrum</span>
+                    </div>
+                </div>
+                <div class="project-media-container">
+                    <img src="https://placehold.co/1200x900/f1f3f4/202124?text=Genie+AI+Dashboard+UI" alt="Genie AI Platform Interface">
+                </div>
+            </article>
+
+            <!-- Project 3: Patch Management (Video Placement) -->
+            <article class="project-row reveal">
+                <div class="project-content">
+                    <h4 class="project-title">Patch Management Optimization</h4>
+                    <p class="project-role">Role: Product Analyst</p>
+                    <p class="project-desc">
+                        A performance tuning and visibility initiative for the enterprise Patch & Updates Dashboard. It solves the critical problem of slow OS update deployments and lack of endpoint vulnerability tracking, increasing Windows patch deployment performance by 60% and providing clear KPI-driven visibility.
+                    </p>
+                    <div class="skills-container">
+                        <span class="skill-tag">Product Analytics</span>
+                        <span class="skill-tag">Funnel Analysis</span>
+                        <span class="skill-tag">Roadmap Planning</span>
+                        <span class="skill-tag">KPI Tracking</span>
+                        <span class="skill-tag">Churn Analysis</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">Power BI</span>
+                        <span class="skill-tag">Confluence</span>
+                    </div>
+                </div>
+                <div class="project-media-container">
+                    <video autoplay loop muted playsinline>
+                        <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </article>
+
+            <!-- Project 4: macOS Security (Image Placement) -->
+            <article class="project-row reveal">
+                <div class="project-content">
+                    <h4 class="project-title">macOS Security Suite & Remote Lost Mode</h4>
+                    <p class="project-role">Role: Product Analyst</p>
+                    <p class="project-desc">
+                        An incident response workflow designed to secure missing or stolen enterprise MacBooks. It closes a critical endpoint security gap by engineering a one-click remote Lost Mode using dynamic wildcards, instantly locking the device and streamlining enterprise recovery operations.
+                    </p>
+                    <div class="skills-container">
+                        <span class="skill-tag">Competitive Analysis</span>
+                        <span class="skill-tag">Customer Journey Mapping</span>
+                        <span class="skill-tag">Cross-functional Alignment</span>
+                        <span class="skill-tag">Customer Feedback Analysis</span>
+                        <span class="skill-tag">MDM Protocols</span>
+                    </div>
+                </div>
+                <div class="project-media-container">
+                    <img src="https://placehold.co/1200x900/f1f3f4/202124?text=macOS+Security+Workflow" alt="macOS Security Suite">
+                </div>
+            </article>
+
+            <!-- Project 5: Live SSH Terminal (Video Placement) -->
+            <article class="project-row reveal">
+                <div class="project-content">
+                    <h4 class="project-title">Live SSH Terminal for Windows</h4>
+                    <p class="project-role">Role: Product Analyst</p>
+                    <p class="project-desc">
+                        A secure, remote command-line access tool built for enterprise IT troubleshooting. It eliminates the need for physical IT intervention by allowing admins to securely execute backend commands on remote Windows endpoints, drastically cutting the mean time to resolution (MTTR) for critical issues.
+                    </p>
+                    <div class="skills-container">
+                        <span class="skill-tag">Technical Product Mgmt</span>
+                        <span class="skill-tag">Backlog Management</span>
+                        <span class="skill-tag">Sprint Planning</span>
+                        <span class="skill-tag">Stakeholder Management</span>
+                        <span class="skill-tag">API Documentation</span>
+                        <span class="skill-tag">Agile Execution</span>
+                        <span class="skill-tag">Jira</span>
+                    </div>
+                </div>
+                <div class="project-media-container">
+                    <video autoplay loop muted playsinline>
+                        <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </article>
+
+            <!-- Project 6: Two-Way Chat (Image Placement) -->
+            <article class="project-row reveal">
+                <div class="project-content">
+                    <h4 class="project-title">Two-Way Administrator-to-Device Chat</h4>
+                    <p class="project-role">Role: Product Analyst</p>
+                    <p class="project-desc">
+                        A real-time communication module connecting IT administrators directly with end-users on managed devices. It solves communication friction during live troubleshooting sessions, ensuring clear, documented IT support workflows without relying on external, non-compliant messaging applications.
+                    </p>
+                    <div class="skills-container">
+                        <span class="skill-tag">UX Workflow Mapping</span>
+                        <span class="skill-tag">Usability Testing</span>
+                        <span class="skill-tag">Requirement Prioritization</span>
+                        <span class="skill-tag">Wireframing</span>
+                        <span class="skill-tag">MockFlow</span>
+                        <span class="skill-tag">Requirement Analysis</span>
+                    </div>
+                </div>
+                <div class="project-media-container">
+                    <img src="https://placehold.co/1200x900/f1f3f4/202124?text=Admin+Chat+Interface" alt="Two-Way Chat Interface">
+                </div>
+            </article>
+
+        </section>
     </main>
+
+    <section id="contact" class="contact-section">
+        <div class="container reveal">
+            <h2 class="contact-heading">Let's build something<br>impactful together.</h2>
+            
+            <a href="mailto:sivapnandham@gmail.com" class="huge-email">
+                sivapnandham@gmail.com
+            </a>
+            
+            <div class="footer-socials">
+                <a href="https://www.linkedin.com/in/sivanandhampalanisamy/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </div>
+        </div>
+    </section>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -467,32 +572,32 @@
             const observerOptions = {
                 root: null,
                 rootMargin: '0px',
-                threshold: 0.1 // Triggers when 10% of the element is visible
+                threshold: 0.15 // Triggers when 15% of the element is visible
             };
 
-            // Create the observer
+            // Create the observer to handle fade-up elements
             const observer = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        // Add the 'visible' class to trigger CSS transition
                         entry.target.classList.add('visible');
-                        // Stop observing once the animation is triggered
-                        observer.unobserve(entry.target);
+                        observer.unobserve(entry.target); // Run animation only once
                     }
                 });
             }, observerOptions);
 
-            // Select all elements with the 'reveal' class
+            // Select all elements that need to be revealed
             const revealElements = document.querySelectorAll('.reveal');
             
-            // Loop through elements and either reveal them immediately (if above fold) or observe them
+            // Check elements on load to see if they are already in the viewport
             revealElements.forEach(el => {
-                // Using a slight delay to ensure the browser has painted the initial state
+                // Slight delay to allow CSS styles to compute fully
                 setTimeout(() => {
                     const rect = el.getBoundingClientRect();
+                    // If element is already on screen on page load, reveal it immediately
                     if (rect.top < window.innerHeight && rect.bottom >= 0) {
                         el.classList.add('visible');
                     } else {
+                        // Otherwise, wait for scroll
                         observer.observe(el);
                     }
                 }, 100);
